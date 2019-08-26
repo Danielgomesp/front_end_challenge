@@ -1,17 +1,36 @@
-.postArticle {
-    border:none 20px #000000;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+.main-div {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+}
+.main-div ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
 }
 
-.postTitle {
-border:none 10px #000000;
--moz-border-radius: 0px;
--webkit-border-radius: 0px;
-border-radius: 0px;
+.main-div ul li {
+    display: flex;
+    flex-direction: column;
+} 
+
+.main-div ul li img {
+    max-width: 100%;
 }
 
-.postTitle :hover{
-    color: blueviolet;
+.main-divfooter {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    text-align: left;
+    border-radius: 0 0 5px 5px; 
+}
+
+.main-div ul li img:hover {
+    transform: translateY(-2px);
+    transition: all 0.5s;
 }
