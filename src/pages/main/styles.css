@@ -1,0 +1,17 @@
+.postArticle {
+    border:none 20px #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.postTitle {
+border:none 10px #000000;
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+}
+
+.postTitle :hover{
+    color: blueviolet;
+}
