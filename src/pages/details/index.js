@@ -1,7 +1,14 @@
-import React, { Component } from 'react';
-import Api from '../../services/api';
+import React from 'react';
 import './styles.css';
+import Api from '../../services/api';
 
-const Details = () => (<p>Hello!</p>)
+export default function Details({ match }) {
+    
+    const { slug } = match.params;
+    const loadContent = async () => {
+        const response = await Api.get(`https://blog.apiki.com/wp-json/wp/v2/posts?_embed&slug=como-desabilitar-editor-gutenberg-wordpress`);
+        console.log(response.data);
+    }
 
-export default Details;
+    return <p>hi, {match.params.slug}</p>
+};

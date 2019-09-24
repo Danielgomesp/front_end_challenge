@@ -1,36 +1,54 @@
 .main-div {
-    max-width: 980px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 50px 0;
-    text-align: center;
-}
-.main-div ul{
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
-    margin-top: 50px;
+    justify-content: center;
 }
 
-.main-div ul li {
+.postContent {
     display: flex;
     flex-direction: column;
-} 
+    margin: 20px 20px auto;
+    max-width: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 0.2px solid rgb(204, 202, 200);
 
-.main-div ul li img {
+}
+
+.postContent .postText{
+    max-width: 100%;
+    font-size: 14px;
+    color: #5B5A59;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 10px;
+    color: #5B5A59;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.postText{
     max-width: 100%;
 }
 
-.main-divfooter {
-    flex: 1;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 15px 20px;
-    text-align: left;
-    border-radius: 0 0 5px 5px; 
+.postContent button {
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    background-color: rgb(47, 155, 255);
+    color:#fff;    
 }
 
-.main-div ul li img:hover {
-    transform: translateY(-2px);
+.postContent:hover {
+    /* transform: translateY(0px); */
     transition: all 0.5s;
+    background-color:#fafafa ;
 }

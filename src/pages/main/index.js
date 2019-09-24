@@ -1,4 +1,4 @@
-import React, { Component, history } from 'react';
+import React, { Component } from 'react';
 import Api from '../../services/api';
 import './styles.css';
 
@@ -12,13 +12,13 @@ class Main extends Component {
     };
 
     loadProducts = async () => {
-        const response = await Api.get('/posts');
+        const response = await Api.get('/posts?_embed&categories=518');
         this.setState({ postData: response.data });
     };
 
-    handleSubmit(e) {
-        e.preventDefault();
-        //history.push("/details");
+    handleSubmit(slug) { 
+        const {history} = this.props;     
+        history.push(`/details/${slug}`)
     };
 
     render() {
@@ -26,20 +26,14 @@ class Main extends Component {
         console.log(postData);
         return (
             <div className="main-div">
-                <ul>
-                    {postData.map(post =>
-                        <form onSubmit={this.handleSubmit}>
-                            <li key={post.id}>
-                                <h2 className="postTitle">{post.title.rendered}</h2>
-                                <img alt="Capa do post" src="https://blog.apiki.com/wp-content/uploads/sites/2/2019/08/cropped-google-webp-650x435.jpg" />
-                                <p className="postContent">{post.excerpt.rendered}</p>
-                                <footer>
-                                    <button>Carregar mais</button>
-                                </footer>
-                            </li>
-                        </form>
-                    )}
-                </ul>
+                {postData.map(post =>
+                        <div className="postContent" key={post.id}>
+                            <img alt={post._embedded['wp:featuredmedia']['0'].alt_text} src={post._embedded['wp:featuredmedia']['0'].source_url} />
+                            <h2 className="postTitle">{post.title.rendered}</h2>
+                            <p className="postText">{post.excerpt.rendered}</p>
+                            <button type="button" onClick={()=> this.handleSubmit(post.slug)}>Ler notícia completa.</button>
+                        </div>
+                )}
             </div>
         )
     };
