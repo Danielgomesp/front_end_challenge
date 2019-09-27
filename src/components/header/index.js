@@ -2,7 +2,11 @@ import React from 'react';
 import './styles.css';
 
 const Header = () => (
-  <img alt="logo da Apiki" className="headerImg" src="https://blog.apiki.com/wp-content/themes/mfirst/resources/images/color-brand.png" />
+  <div className="header">
+    <a href="/">
+      <img alt="logo da Apiki" className="header__img" src="https://blog.apiki.com/wp-content/themes/mfirst/resources/images/color-brand.png" />
+    </a>
+  </div>
 );
 
 export default Header;

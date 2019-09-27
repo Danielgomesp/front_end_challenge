@@ -1,9 +1,13 @@
 import React from 'react';
 import Routes from './routes';
+import Header from './components/header/index';
 
 function App() {
   return (
-    <Routes />
+    <div>
+      <Header />
+      <Routes />
+    </div>
   );
 }
 
