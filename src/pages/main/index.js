@@ -50,13 +50,13 @@ class Main extends Component {
                 <h1 className="mainPage__title">Apiki para Devs</h1>
                 <div className="postingArea">
                     {postData.map(post =>
-                        <Link to={`/details/${post.slug}`}>
-                            <div className="card" key={post.id}>
+                        <div className="card" key={post.id}>
+                            <Link to={`/details/${post.slug}`}>
                                 <img alt={post._embedded['wp:featuredmedia']['0'].alt_text} src={post._embedded['wp:featuredmedia']['0'].source_url} />
                                 <h3 className="card__title" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                                 <div className="card__text" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     )}
                 </div>
                 <button id="loadMore" type="button" onClick={() => this.loadContent()}> Carregar mais...</button>
