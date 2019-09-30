@@ -19,17 +19,25 @@ export default class Details extends Component {
 
   render() {
     const { postData } = this.state;
-
+    console.log(postData);
     if (postData['0']) {
       return (
-        <div className="detailsPage">
-          <h1 className="detailsPage__title" dangerouslySetInnerHTML={{ __html: postData['0'].title.rendered }} />
-          <h3 className="detailsPage__brief" dangerouslySetInnerHTML={{ __html: postData['0'].excerpt.rendered }} />
-          <div className="detailsPage__date">{postData['0'].date}</div>
-          <div className="detailsPage__image">
-            <img alt={postData['0']._embedded['wp:featuredmedia']['0'].alt_text} src={postData['0']._embedded['wp:featuredmedia']['0'].source_url} />
+        <div className="container">
+          <h1 className="title" dangerouslySetInnerHTML={{ __html: postData['0'].title.rendered }} />
+          <div className="detailsPage">
+            <div className="detailsPage__brief" dangerouslySetInnerHTML={{ __html: postData['0'].excerpt.rendered }} />
+            <div className="authorCard">
+              <img alt="foto do autor" src={postData['0']._embedded.author['0'].avatar_urls['48']} />
+              <div className="authorCard__info">
+                <p>{postData['0']._embedded.author['0'].name}</p>
+                <p className="authorCard__info__date">30 Set 2019</p>
+              </div>
+            </div>
+            <picture className="detailsPage">
+              <img alt={postData['0']._embedded['wp:featuredmedia']['0'].alt_text} src={postData['0']._embedded['wp:featuredmedia']['0'].source_url} />
+            </picture>
+            <div className="detailsPage__content" dangerouslySetInnerHTML={{ __html: postData['0'].content.rendered }} />
           </div>
-          <div className="detailsPage__content" dangerouslySetInnerHTML={{ __html: postData['0'].content.rendered }} />
         </div>
       );
     }
