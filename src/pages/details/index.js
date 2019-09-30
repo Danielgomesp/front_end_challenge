@@ -21,18 +21,22 @@ export default class Details extends Component {
 
   render() {
     const { postData } = this.state;
-    // console.log(postData);
+
     if (postData['0']) {
+      const date = new Date(postData['0'].date.toString());
+      const avatar = postData['0']._embedded.author['0'].avatar_urls['48'];
+      const brief = postData['0'].excerpt.rendered;
+      const title = postData['0'].title.rendered;
       return (
         <div className="container">
-          <h1 className="title" dangerouslySetInnerHTML={{ __html: postData['0'].title.rendered }} />
+          <h1 className="title" dangerouslySetInnerHTML={{ __html: title }} />
           <div className="detailsPage">
-            <div className="detailsPage__brief" dangerouslySetInnerHTML={{ __html: postData['0'].excerpt.rendered }} />
+            <div className="detailsPage__brief" dangerouslySetInnerHTML={{ __html: brief }} />
             <div className="authorCard">
-              <img alt="foto do autor" src={postData['0']._embedded.author['0'].avatar_urls['48']} />
+              <img alt="foto do autor" src={avatar} />
               <div className="authorCard__info">
                 <p>{postData['0']._embedded.author['0'].name}</p>
-                <p className="authorCard__info__date">30 Set 2019</p>
+                <p className="authorCard__info__date">{date.toLocaleDateString()}</p>
               </div>
             </div>
             <picture className="detailsPage">
