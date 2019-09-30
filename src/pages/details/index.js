@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import Api from '../../services/api';
 import './styles.css';
@@ -19,7 +21,7 @@ export default class Details extends Component {
 
   render() {
     const { postData } = this.state;
-    console.log(postData);
+    // console.log(postData);
     if (postData['0']) {
       return (
         <div className="container">

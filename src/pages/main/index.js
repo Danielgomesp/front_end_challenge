@@ -35,7 +35,7 @@ class Main extends Component {
                 page: pageNumber + 1
             });
         }
-        else if (pageNumber == totalPages) {
+        else if (pageNumber === parseInt(totalPages)) {
             this.setState({
                 postData: [...this.state.postData, ...data],
             });
