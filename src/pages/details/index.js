@@ -28,6 +28,7 @@ export default class Details extends Component {
       const avatar = postData['0']._embedded.author['0'].avatar_urls['48'];
       const brief = postData['0'].excerpt.rendered;
       const title = postData['0'].title.rendered;
+      const authorName = postData['0']._embedded.author['0'].name;
       return (
         <div className="container">
           <h1 className="title" dangerouslySetInnerHTML={{ __html: title }} />
@@ -36,7 +37,7 @@ export default class Details extends Component {
             <div className="authorCard">
               <img alt="foto do autor" src={avatar} />
               <div className="authorCard__info">
-                <p>{postData['0']._embedded.author['0'].name}</p>
+                <p>{authorName}</p>
                 <p className="authorCard__info__date">{date.toLocaleDateString()}</p>
               </div>
             </div>
