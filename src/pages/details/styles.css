@@ -9,9 +9,10 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    height: 100px;
+    height: auto;
+    min-height: 100px;
     width: 100%;
-    padding: 10px;
+    padding: 3px;
     margin: 20px 0px 30px 0px;
 }
 
@@ -34,7 +35,6 @@
     text-align: center;
     color: #6E6E6E;
     width: 80%;
-    margin-bottom: 40px;
 }
 
 .detailsPage__content{
@@ -44,7 +44,7 @@
     max-width: 100%;
 }
 
-.detailsPage__content figure, img, pre{
+.detailsPage__content *{
     max-width: 100%;
     height: auto;
 }
@@ -58,7 +58,7 @@ h2, h3, h4, h5{
 .authorCard{
     max-width: 250px;
     height: 80px;
-    margin: 30px auto;
+    margin: 10px auto;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-items: center;
@@ -77,4 +77,13 @@ h2, h3, h4, h5{
 
 .authorCard__info__date{
     font-size: 12px;
+}
+
+pre{
+    overflow: hidden;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }

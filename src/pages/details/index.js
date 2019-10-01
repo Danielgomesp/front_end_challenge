@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Api from '../../services/api';
 import './styles.css';
+import Footer from '../../components/footer/index';
 
 export default class Details extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ export default class Details extends Component {
             </picture>
             <div className="detailsPage__content" dangerouslySetInnerHTML={{ __html: postData['0'].content.rendered }} />
           </div>
+          <Footer />
         </div>
       );
     }
