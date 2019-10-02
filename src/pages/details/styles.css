@@ -22,7 +22,7 @@
     align-items: center;
 }
 
-.detailsPage img{
+.detailsPage__featureMedia{
     display: flex;
     max-width: 100%;
     max-height: 300px;
@@ -48,11 +48,12 @@
 .detailsPage__content *{
     max-width: 100%;
     height: auto;
+    margin: 10px auto;
 }
-h2, h3, h4, h5{
+h2, h3, h4, h5, h6{
     color: #2E9AFE;
 }
-.detailsPage__content p, ul{
+.detailsPage__content p, ul, ol{
     color: #6E6E6E;
 }
 
@@ -94,7 +95,7 @@ tr:hover {
     font-size: 12px;
 }
 
-pre{
+pre, a{
     overflow: hidden;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;

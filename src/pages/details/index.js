@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import Api from '../../services/api';
 import './styles.css';
-import Footer from '../../components/footer/index';
 
 export default class Details extends Component {
   constructor(props) {
@@ -42,11 +41,10 @@ export default class Details extends Component {
               </div>
             </div>
             <picture className="detailsPage">
-              <img alt={postData['0']._embedded['wp:featuredmedia']['0'].alt_text} src={postData['0']._embedded['wp:featuredmedia']['0'].source_url} />
+              <img className="detailsPage__featureMedia" alt={postData['0']._embedded['wp:featuredmedia']['0'].alt_text} src={postData['0']._embedded['wp:featuredmedia']['0'].source_url} />
             </picture>
             <div className="detailsPage__content" dangerouslySetInnerHTML={{ __html: postData['0'].content.rendered }} />
           </div>
-          <Footer />
         </div>
       );
     }
