@@ -11,3 +11,6 @@ footer{
     align-items: center;
     color: #fff;
 }
+.footer a:link{
+    color: #fff;
+}
