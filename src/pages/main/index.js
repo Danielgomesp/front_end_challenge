@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/no-danger */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Api from '../../services/api';
@@ -31,6 +33,7 @@ class Main extends Component {
     id.innerHTML = 'Isso é tudo por hoje.';
   }
 
+  // eslint-disable-next-line react/destructuring-assignment
   async loadContent(pageNumber = this.state.page) {
     this.setState({ pageLoaded: false });
     const response = await Api.get(`/posts?_embed&categories=518&page=${pageNumber}`);
@@ -47,7 +50,7 @@ class Main extends Component {
       this.setState({
         page: pageNumber + 1,
       });
-    } else if (pageNumber === parseInt(totalPages, 10)) {    
+    } else if (pageNumber === parseInt(totalPages, 10)) {
       this.disableButton('loadMore');
     }
   }

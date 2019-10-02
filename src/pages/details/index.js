@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Api from '../../services/api';
 import './styles.css';
 
@@ -13,7 +14,7 @@ export default class Details extends Component {
   }
 
   async componentDidMount() {
-    const { slug } = this.props.match.params;
+    const { slug } = this.props;
     const response = await Api.get(`https://blog.apiki.com/wp-json/wp/v2/posts?_embed&slug=${slug}`);
     this.setState({ postData: response.data });
   }
@@ -50,3 +51,6 @@ export default class Details extends Component {
     return true;
   }
 }
+Details.propTypes = {
+  slug: PropTypes.string.isRequired,
+};
