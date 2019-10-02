@@ -16,7 +16,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    const { page } = this.props.match.params;
+    const { page } = this.state;
     this.loadContent(page);
   }
 
@@ -69,7 +69,7 @@ class Main extends Component {
         <h1 className="mainPage__title">Apiki para Devs</h1>
         <div className="postingArea">
           {postData.map((post) => {
-            let img = 'https://blog.apiki.com/wp-content/uploads/sites/2/2019/09/cropped-business-first-650x435.png';
+            let img = '';
             if (post._embedded['wp:featuredmedia']) {
               img = post._embedded['wp:featuredmedia']['0'].source_url;
             }
