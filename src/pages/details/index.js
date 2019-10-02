@@ -12,7 +12,6 @@ export default class Details extends Component {
     };
   }
 
-
   async componentDidMount() {
     const { slug } = this.props.match.params;
     const response = await Api.get(`https://blog.apiki.com/wp-json/wp/v2/posts?_embed&slug=${slug}`);
